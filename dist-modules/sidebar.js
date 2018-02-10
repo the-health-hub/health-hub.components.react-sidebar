@@ -357,7 +357,7 @@ var Sidebar = function (_Component) {
             dragHandleStyle.left = 0;
           }
 
-          dragHandle = _react2.default.createElement('div', { style: dragHandleStyle,
+          dragHandle = _react2.default.createElement('div', { style: this.props.externalStylesOnly ? '' : dragHandleStyle,
             onTouchStart: this.onTouchStart, onTouchMove: this.onTouchMove,
             onTouchEnd: this.onTouchEnd, onTouchCancel: this.onTouchEnd });
         }
@@ -372,14 +372,15 @@ var Sidebar = function (_Component) {
           this.props.sidebar
         ),
         _react2.default.createElement('div', { className: this.props.overlayClassName,
-          style: overlayStyle,
+          style: this.props.externalStylesOnly ? '' : overlayStyle,
           role: 'presentation',
           tabIndex: '0',
           onClick: this.overlayClicked
         }),
         _react2.default.createElement(
           'div',
-          { className: this.props.contentClassName, style: contentStyle },
+          { className: this.props.contentClassName,
+            style: this.props.externalStylesOnly ? '' : contentStyle },
           dragHandle,
           this.props.children
         )
@@ -402,6 +403,9 @@ Sidebar.propTypes = {
     overlay: _propTypes2.default.object,
     dragHandle: _propTypes2.default.object
   }),
+
+  // Are styles loaded via an external source / stylesheet? If so, sets no styles on the component.
+  externalStylesOnly: _propTypes2.default.bool,
 
   // root component optional class
   rootClassName: _propTypes2.default.string,
@@ -460,6 +464,7 @@ Sidebar.defaultProps = {
   dragToggleDistance: 30,
   onSetOpen: function onSetOpen() {},
   styles: {},
+  externalStylesOnly: false,
   defaultSidebarWidth: 0
 };
 
