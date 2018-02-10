@@ -311,7 +311,7 @@ class Sidebar extends Component {
         }
 
         dragHandle = (
-          <div style={dragHandleStyle}
+          <div style={this.props.externalStylesOnly ? '' : dragHandleStyle}
                onTouchStart={this.onTouchStart} onTouchMove={this.onTouchMove}
                onTouchEnd={this.onTouchEnd} onTouchCancel={this.onTouchEnd} />);
       }
@@ -337,12 +337,13 @@ class Sidebar extends Component {
         {sideBar}
 
         <div className={this.props.overlayClassName}
-             style={overlayStyle}
+             style={this.props.externalStylesOnly ? '' : overlayStyle}
              role="presentation"
              tabIndex="0"
              onClick={this.overlayClicked}
           />
-        <div className={this.props.contentClassName} style={contentStyle}>
+        <div className={this.props.contentClassName}
+             style={this.props.externalStylesOnly ? '' : contentStyle}>
           {dragHandle}
           {this.props.children}
         </div>
@@ -363,6 +364,9 @@ Sidebar.propTypes = {
     overlay: PropTypes.object,
     dragHandle: PropTypes.object,
   }),
+
+  // Are styles loaded via an external source / stylesheet? If so, sets no styles on the component.
+  externalStylesOnly: PropTypes.bool,
 
   // root component optional class
   rootClassName: PropTypes.string,
@@ -429,6 +433,7 @@ Sidebar.defaultProps = {
   dragToggleDistance: 30,
   onSetOpen: () => {},
   styles: {},
+  externalStylesOnly: false,
   defaultSidebarWidth: 0,
 };
 
