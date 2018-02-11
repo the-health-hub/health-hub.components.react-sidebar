@@ -1,8 +1,8 @@
 {
-  "name": "react-sidebar",
-  "version": "2.3.2",
-  "author": "Paulus Schoutsen <Paulus@PaulusSchoutsen.nl>",
-  "description": "A sidebar component for React.",
+  "name": "@health-hub/react-sidebar",
+  "version": "1.0.0",
+  "author": "Joe Flack <joeflack4@gmail.com>",
+  "description": "A sidebar component for React. Forked from package by the same name, react-sidebar 2.3.2 at https://github.com/balloob/react-sidebar, by Paulus Schoutsen <Paulus@PaulusSchoutsen.nl>",
   "main": "dist-modules/index.js",
   "jsnest:main": "src/index.js",
   "scripts": {
@@ -18,7 +18,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/balloob/react-sidebar.git"
+    "url": "https://github.com/the-health-hub/health-hub.components.react-sidebar.git"
   },
   "license": "MIT",
   "peerDependencies": {
