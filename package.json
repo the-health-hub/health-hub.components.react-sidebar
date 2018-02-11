@@ -1,6 +1,6 @@
 {
   "name": "@health-hub/react-sidebar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Joe Flack <joeflack4@gmail.com>",
   "description": "A sidebar component for React. Forked from package by the same name, react-sidebar 2.3.2 at https://github.com/balloob/react-sidebar, by Paulus Schoutsen <Paulus@PaulusSchoutsen.nl>",
   "main": "dist-modules/index.js",
